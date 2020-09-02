@@ -7,3 +7,6 @@ list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
 
 add_library(SimpleCar_plugin SHARED script/SimpleCar_plugin.cpp)
 target_link_libraries(SimpleCar_plugin ${GAZEBO_LIBRARIES})
+
+add_library(contact SHARED script/ContactPlugin.cpp)
+target_link_libraries(contact ${GAZEBO_LIBRARIES})

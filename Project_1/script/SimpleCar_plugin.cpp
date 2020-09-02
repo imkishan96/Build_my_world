@@ -12,12 +12,12 @@ namespace gazebo
         {
             this->model = _parent;
             this->updateConnection = event::Events::ConnectWorldUpdateBegin
-            (std::bind(SimpleCar_plugin::OnUpdate, this));
+            (std::bind(&SimpleCar_plugin::OnUpdate, this));
         }
 
         void OnUpdate()
         {   
-            ignition::math::Vector3d init_vel(0.3, 0, 0);
+            ignition::math::Vector3d init_vel(0, 0.3, 0);
             this->model->SetLinearVel(init_vel);   
         }
     
