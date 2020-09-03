@@ -14,7 +14,7 @@ ContactPlugin::~ContactPlugin()
 }
 
 void ContactPlugin::Load(sensors::SensorPtr _sensor, sdf::ElementPtr /*_sdf*/)
-{
+{   printf("------------ContactPlugin: Load ---------------\n");
     this->parentSensor = 
     std::dynamic_pointer_cast<sensors::ContactSensor>(_sensor);
     if(!this->parentSensor)
@@ -32,11 +32,12 @@ void ContactPlugin::Load(sensors::SensorPtr _sensor, sdf::ElementPtr /*_sdf*/)
 void ContactPlugin::onUpdate()
 {   
     //printf("Collision detected.! \n");
-    
+
     msgs::Contacts contacts;
     contacts = this->parentSensor->Contacts();
     if(contacts.contact_size()){
         printf("Collision detected.! \n");
+
     }
 
     // for (unsigned int i = 0; i < contacts.contact_size(); ++i)

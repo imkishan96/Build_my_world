@@ -1,0 +1,25 @@
+world plugin
+    welcome_world class | library
+    <plugin name="<welcome_world>" filename="libwelcome_world.so"/>
+    </world>
+
+model plugin
+
+
+<plugin name="SimpleCar_plugin" filename="libSimpleCar_plugin.so"/>
+<model>
+
+
+sensor plugin
+<link>
+    <sensor name='my_contact' type='contact'>
+    <plugin name="my_plugin" filename="libcontact.so"/>
+        <contact>
+        <collision>car_collision</collision>
+        </contact>
+        <update_rate> 1 </update_rate>
+    </sensor>
+</link>
+
+
+export GAZEBO_PLUGIN_PATH=/home/kishan/workspace_local/Project_1/build:$GAZEBO_PLUGIN_PATH

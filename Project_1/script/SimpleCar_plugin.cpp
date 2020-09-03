@@ -1,29 +1,42 @@
-#include <gazebo-9/gazebo/gazebo.hh>
-#include <gazebo/physics/physics.hh>
-#include <gazebo/common/common.hh>
-#include <ignition/math/Vector3.hh>
+#include "SimpleCar_plugin.h"
 
-namespace gazebo
-{
-    class SimpleCar_plugin : public ModelPlugin
-    {
-    public:
-        void Load(physics::ModelPtr _parent, sdf::ElementPtr )
-        {
-            this->model = _parent;
-            this->updateConnection = event::Events::ConnectWorldUpdateBegin
-            (std::bind(&SimpleCar_plugin::OnUpdate, this));
-        }
+using namespace gazebo;
 
-        void OnUpdate()
-        {   
-            ignition::math::Vector3d init_vel(0, 0.3, 0);
-            this->model->SetLinearVel(init_vel);   
-        }
+GZ_REGISTER_MODEL_PLUGIN(SimpleCar_plugin)
+
+SimpleCar_plugin::SimpleCar_plugin() : ModelPlugin(){
+    printf("------------SimpleCar_plugin: constructor ---------------\n");
+    //obj_vec.push_back(this);
+    //this->myID = obj_vec.size()-1; 
+    //printf("------------SimpleCar_plugin: constructor ---------------\n");
+}
+
+void SimpleCar_plugin::Load(physics::ModelPtr _parent, sdf::ElementPtr )
+{   
+    //obj_vec.push_back(this);
+    printf("------------SimpleCar_plugin: Load ---------------\n");
     
-    private:
-        physics::ModelPtr model;
-        event::ConnectionPtr updateConnection;
-    };
-    GZ_REGISTER_MODEL_PLUGIN(SimpleCar_plugin)
+    this->model = _parent;
+    this->updateConnection = event::Events::ConnectWorldUpdateBegin
+        (std::bind(&SimpleCar_plugin::OnUpdate, this));
+    
+    printf("------------SimpleCar_plugin: Obj_vec assigned ---------------\n");
+}
+
+void SimpleCar_plugin::OnUpdate()
+{   
+    if(myturn == 0)
+    {   
+        blah = *this;
+        //this->obj_vec.push_back(this);
+        myturn = 1;// SimpleCar_plugin::obj_vec.size() - 1;
+        printf("------------SimpleCar_plugin: Onupdate(myID) ---------------\n");
+    }
+    ignition::math::Vector3d init_vel(0, 0.3, 0);
+    this->model->SetLinearVel(init_vel);
+    // if(myturn==0 && WorldPluginWelcome::flag == false)
+    // {
+    //     myturn ==1;
+    //     WorldPluginWelcome::flag = true;
+    // }
 }

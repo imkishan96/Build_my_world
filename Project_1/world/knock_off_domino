@@ -1,5 +1,7 @@
 <sdf version='1.6'>
   <world name='default'>
+    <plugin name="<welcome_world>" filename="libwelcome_world.so"/>
+    
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
       <pose frame=''>0 0 10 0 -0 0</pose>
@@ -83,6 +85,7 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <model name='Simple_Car'>
+      <plugin name="SimpleCar_plugin" filename="libSimpleCar_plugin.so"/>
       <link name='link_0'>
         <inertial>
           <mass>1</mass>
@@ -724,7 +727,7 @@
       <allow_auto_disable>1</allow_auto_disable>
       <pose frame=''>-0.013554 -0.260237 0 0 -0 0</pose>
       
-      <plugin name="SimpleCar_plugin" filename="libSimpleCar_plugin.so"/>
+      
     </model>
     <model name='Domino'>
       <link name='link_0'>
@@ -899,5 +902,6 @@
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
+    
   </world>
 </sdf>
