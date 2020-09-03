@@ -21,5 +21,14 @@ sensor plugin
     </sensor>
 </link>
 
+<collision name='car_collision'>
+</collision>
+<sensor name='my_contact' type='contact'>
+<plugin name="my_plugin" filename="libcontact.so"/>
+    <contact>
+    <collision>car_collision</collision>
+    </contact>
+    <update_rate> 1 </update_rate>
+</sensor>
 
 export GAZEBO_PLUGIN_PATH=/home/kishan/workspace_local/Project_1/build:$GAZEBO_PLUGIN_PATH
