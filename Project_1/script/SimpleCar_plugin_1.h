@@ -1,5 +1,5 @@
-#ifndef SIMPLECAR_PLUGIN_H
-#define SIMPLECAR_PLUGIN_H
+#ifndef SIMPLECAR_PLUGIN_1_H
+#define SIMPLECAR_PLUGIN_1_H
 
 
 #include <gazebo/gazebo.hh>
@@ -10,10 +10,10 @@
 namespace gazebo
 
 {
-    class SimpleCar_plugin : public ModelPlugin
+    class SimpleCar_plugin_1 : public ModelPlugin
     {
     public:
-        SimpleCar_plugin();
+        SimpleCar_plugin_1();
         void Load(physics::ModelPtr _parent, sdf::ElementPtr );
         void OnUpdate();
 
@@ -21,7 +21,7 @@ namespace gazebo
         physics::ModelPtr model;
         event::ConnectionPtr updateConnection;
     };
-    //GZ_REGISTER_MODEL_PLUGIN(SimpleCar_plugin)
+
 }
 
 #endif

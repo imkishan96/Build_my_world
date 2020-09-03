@@ -3,8 +3,8 @@
 
 
 #include <string>
-#include <gazebo-9/gazebo/gazebo.hh>
-#include <gazebo-9/gazebo/sensors/sensors.hh>
+#include <gazebo/gazebo.hh>
+#include <gazebo/sensors/sensors.hh>
 
 namespace gazebo
 {

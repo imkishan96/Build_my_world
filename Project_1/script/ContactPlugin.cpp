@@ -6,7 +6,7 @@ GZ_REGISTER_SENSOR_PLUGIN(ContactPlugin)
 
 ContactPlugin::ContactPlugin() : SensorPlugin()
 {
-    printf("------------ContactPlugin: constructor ---------------\n");
+    //printf("------------ContactPlugin: constructor ---------------\n");
 }
 
 ContactPlugin::~ContactPlugin()
@@ -14,7 +14,7 @@ ContactPlugin::~ContactPlugin()
 }
 
 void ContactPlugin::Load(sensors::SensorPtr _sensor, sdf::ElementPtr /*_sdf*/)
-{   printf("------------ContactPlugin: Load ---------------\n");
+{   //printf("------------ContactPlugin: Load ---------------\n");
     this->parentSensor = 
     std::dynamic_pointer_cast<sensors::ContactSensor>(_sensor);
     if(!this->parentSensor)

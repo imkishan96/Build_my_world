@@ -5,12 +5,12 @@ using namespace gazebo;
 GZ_REGISTER_MODEL_PLUGIN(SimpleCar_plugin)
 
 SimpleCar_plugin::SimpleCar_plugin() : ModelPlugin(){
-    printf("------------SimpleCar_plugin: constructor ---------------\n");
+    //printf("------------SimpleCar_plugin: constructor ---------------\n");
 }
 
 void SimpleCar_plugin::Load(physics::ModelPtr _parent, sdf::ElementPtr )
 {   
-    printf("------------SimpleCar_plugin: Load ---------------\n");    
+    //printf("------------SimpleCar_plugin: Load ---------------\n");    
     this->model = _parent;
     this->updateConnection = event::Events::ConnectWorldUpdateBegin
         (std::bind(&SimpleCar_plugin::OnUpdate, this));

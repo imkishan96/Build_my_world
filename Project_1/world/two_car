@@ -725,6 +725,7 @@
       <pose frame=''>-0.033769 -1.60969 0 0 -0 0</pose>
     </model>
     <model name='Simple_Car_0'>
+      <plugin name="SimpleCar_plugin_1" filename="libSimpleCar_plugin_1.so"/>
       <link name='link_0'>
         <inertial>
           <mass>1</mass>

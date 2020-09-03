@@ -5,10 +5,11 @@ using namespace gazebo;
 WorldPluginWelcome::WorldPluginWelcome() : WorldPlugin() 
 {
     printf("Welcome to Kishan's World, Enjoy the show.!! \n");
-    printf("------------WorldPlugin: Constructor ---------------\n");
+    //printf("------------WorldPlugin: Constructor ---------------\n");
 }
 
 void WorldPluginWelcome::Load(physics::WorldPtr _world, sdf::ElementPtr _sdf)
-{printf("------------WorldPlugin: Load ---------------\n");}
+{//printf("------------WorldPlugin: Load ---------------\n");
+}
 
 GZ_REGISTER_WORLD_PLUGIN(WorldPluginWelcome)
