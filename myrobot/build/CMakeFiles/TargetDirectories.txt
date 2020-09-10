@@ -1,3 +1,0 @@
-/home/kishan/workspace_local/myrobot/build/CMakeFiles/rebuild_cache.dir
-/home/kishan/workspace_local/myrobot/build/CMakeFiles/hello.dir
-/home/kishan/workspace_local/myrobot/build/CMakeFiles/edit_cache.dir
